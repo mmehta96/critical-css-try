@@ -1,8 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,9 +11,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  const data = `
+  .accordion-btn {background-color: #ADD8E6;color: #444;cursor: pointer;padding: 18px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;}.container {padding: 0 18px;display: none;background-color: white;overflow: hidden;}h1 {word-spacing: 5px;color: blue;font-weight: bold;text-align: center;}`;
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <head>
+        <style dangerouslySetInnerHTML={{ __html: data }} />
+    </head>
+    <body>
+    {children}
+    </body>
     </html>
   )
 }
