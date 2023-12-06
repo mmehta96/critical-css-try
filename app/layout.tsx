@@ -18,7 +18,15 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-        <style dangerouslySetInnerHTML={{ __html: data }} />
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        {/*<link rel="stylesheet" href="/_next/static/css/app/layout.css" data-n-g="" media="print" onLoad="this.media='all'" />*/}
+        {/*<noscript>*/}
+        {/*<link rel="stylesheet" href="/_next/static/css/app/layout.css"/>*/}
+        {/*</noscript>*/}
+      {/*<link rel="preload" href="/_next/static/css/app/layout.css" as="style" onLoad="this.onload=null;this.rel='stylesheet'" />*/}
+      {/*<noscript><link rel="stylesheet" href="/_next/static/css/app/layout.css"/></noscript>*/}
+      <style type={'text/css'} dangerouslySetInnerHTML={{ __html: data }} />
     </head>
     <body>
     {children}
